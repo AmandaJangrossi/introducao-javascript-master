@@ -25,7 +25,8 @@ COMANDOS
     a ele.
 
 */ 
-/*TERMOS/CONTEÚDO
+/*
+TERMOS/CONTEÚDO
 
     .DOM -> Document Object Model, como uma cópia da página HTML gravada no navegador e 
     manipulável pelo JS, quando manipulamos o HTML, NÃO estamos mexendo diretamente com
@@ -96,53 +97,17 @@ for(var i = 0; i < pacientes.length; i++){
     }
 
     if (alturaValida && pesoValido){ 
-        var imc = peso / (altura*altura);
-        tdIMC.textContent = imc.toFixed(2);
+        var imc = calculaImc(peso,altura);
+        tdIMC.textContent = imc
     }
 
 }
 
-var botaoAdicionarCliente  = document.querySelector("#adicionar-paciente");
-
-botaoAdicionarCliente.addEventListener("click",function(event){
-    
-    var form = document.querySelector("#form-adiciona")
-    var nome = form.nome.value;
-    var peso  = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura .value;
-
-    var pacienteTr = document.createElement("tr");
-
-    var nomeTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd = document.createElement("td");
-
-    nomeTd.textContent = nome;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    gorduraTd.textContent =  gordura;
-    imcTd.textContent = imc;
-
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd);
-    
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTr);
-
-    console.log(tabela)
-    console.log(pacienteTr)
-
-
-    
-    event.preventDefault()
-    console.log("Você apertou no botão!")
-})
-
+function calculaImc(peso,altura){
+    var imc = 0;
+    imc = peso / (altura*altura);
+    return imc.toFixed(2);
+}
 /* função nominal de teste
 function mostraMensagem(){
     console.log("Você clicou em mim!");
