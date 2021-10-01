@@ -15,6 +15,14 @@ COMANDOS
     .var.style.color -> altera um estilo específico direto no código (não é recomendado por 
     não possuir tanta versatilidade) 
     .var.classList.add("nome-da-classe") -> adiciona uma classe a determinado elemento
+    .var.addEventListener("ação", funcao) -> faz com que o JS fique a espera de uma ação do usuário
+    na página. Ex.: "titulo.addEventListener("click", mostraMensagem)", toda vez que há o click 
+    sobre o título uma mensagem é mostrada.
+    event.preventDefault() -> faz com que eventos padrão não sejam executados. Ex.: no caso de um botão
+    evita que ele recarregue a página. Importante lembrar de passar o parâmetro para a função
+    .var.appendChild() -> adiciona um "filho" ao elemento pai
+    .document.createElement("tag") -> cria um elemento dentro do documento. Pode ter uma variável atribuída
+    a ele.
 
 */ 
 /*TERMOS/CONTEÚDO
@@ -31,7 +39,8 @@ COMANDOS
     .FOR -> Realiza determinada ação ATÉ que a condição seja satisfeita. Ex.: conte de 1 até 5
     o programa só irá parar ao chegar ao número 5, condição final.
         .Estrutura -> for(var valorInicial; valorInicial<valorFinal; valorInicial++)
-
+    .Funcão anônima -> ao invés de nomear uma função a parte e executá-la, há a 
+    possibilidade declará-la durante o uso. Feita da seguinte forma => function(argumentos){ação}; 
     */
 /*
 DICAS/BOAS PRÁTICAS
@@ -40,6 +49,9 @@ DICAS/BOAS PRÁTICAS
     .Usar IDs e Classes para manipulação de tags, para evitar alterações indesejada
     .Padrão JS -> camelCase, tanto para variáveis quanto propriedades (ex.:backgroundColor)
     .Sempre se atentar aos parênteses ao realizar cálculos
+    .Há a possibilidade de usar "event_shortcuts" ou seja, atalhos de eventos. Ao invés de 
+    se passar o eventListener, podemos utilizar elemento.onClick = funcao (ao invés de addEventListener(ação, funcao))
+    porém, não é recomendado pois o código pode ser sobrescrito! Descarta-se a fila de eventos neste modo.
 
 */
 
@@ -50,8 +62,7 @@ var titulo = document.querySelector("h1");
 titulo.textContent = "Aparecida Nutricionista"
 
 
-var pacientes = document.querySelectorAll(".paciente");
-console.log(pacientes) // retorna um Array com 5 elementos
+var pacientes = document.querySelectorAll(".paciente");// retorna um Array com 5 elementos
 
 
 for(var i = 0; i < pacientes.length; i++){
@@ -91,14 +102,53 @@ for(var i = 0; i < pacientes.length; i++){
 
 }
 
+var botaoAdicionarCliente  = document.querySelector("#adicionar-paciente");
+
+botaoAdicionarCliente.addEventListener("click",function(event){
+    
+    var form = document.querySelector("#form-adiciona")
+    var nome = form.nome.value;
+    var peso  = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura .value;
+
+    var pacienteTr = document.createElement("tr");
+
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent =  gordura;
+    imcTd.textContent = imc;
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+
+    console.log(tabela)
+    console.log(pacienteTr)
 
 
+    
+    event.preventDefault()
+    console.log("Você apertou no botão!")
+})
 
+/* função nominal de teste
+function mostraMensagem(){
+    console.log("Você clicou em mim!");
+}*/
 
-//calc imc 
-
-
-
+// Parei em -> aula 5 - Boas práticas de JS
 
 
 
