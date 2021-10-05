@@ -23,6 +23,7 @@ COMANDOS
     .var.appendChild() -> adiciona um "filho" ao elemento pai
     .document.createElement("tag") -> cria um elemento dentro do documento. Pode ter uma variável atribuída
     a ele.
+    .form.reset() = reseta campos do form
 
 */ 
 /*
