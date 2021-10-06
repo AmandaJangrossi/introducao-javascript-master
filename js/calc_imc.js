@@ -10,7 +10,7 @@ COMANDOS
     elemento, é necessário usar o complemento "ALL", para que retorne todos elementos de uma
     classe, lista, fila. Retorna um Array.
     .var.textContent -> manipular o texto dentro de tags 
-    .var.lenght -> retorna tamanho de uma variável em array
+    .var.length -> retorna tamanho de uma variável em array
     .var.toFixed(X) -> limita visualização de casas decimais em que X é o número de casas
     .var.style.color -> altera um estilo específico direto no código (não é recomendado por 
     não possuir tanta versatilidade) 
@@ -77,19 +77,19 @@ for(var i = 0; i < pacientes.length; i++){
     var peso = tdPeso.textContent;
     var altura = tdAltura.textContent;
 
-    var pesoValido = true; 
-    var alturaValida = true;
+    var pesoValido = validaPeso(peso); 
+    var alturaValida = validaAltura(altura);
 
     tdIMC = paciente.querySelector(".info-imc") 
 
-    if (peso <= 0 || peso >= 1000){
+    if (!pesoValido){
         console.log("Peso inválido!");
         tdIMC.textContent = "Peso inválido!" 
         pesoValido = false;
         paciente.classList.add("paciente-invalido")
     }
 
-    if (altura <= 0 || altura >= 3){
+    if (!alturaValida){
         console.log("Altura inválida!");
         tdIMC.textContent = "Altura inválida!";
         alturaValida = false;
@@ -108,6 +108,24 @@ function calculaImc(peso,altura){
     var imc = 0;
     imc = peso / (altura*altura);
     return imc.toFixed(2);
+}
+
+function validaPeso(peso){
+
+    if (peso >= 0 && peso <= 1000) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validaAltura(altura) {
+
+    if (altura >= 0 && altura <= 3.0) {
+        return true;
+    } else {
+        return false;
+    }
 }
 /* função nominal de teste
 function mostraMensagem(){
