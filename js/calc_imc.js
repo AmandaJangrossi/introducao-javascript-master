@@ -24,6 +24,7 @@ COMANDOS
     .document.createElement("tag") -> cria um elemento dentro do documento. Pode ter uma variável atribuída
     a ele.
     .form.reset() = reseta campos do form
+    .innerHTML -> pega o conteúdo rm HTML de um elemento (<p>Conteúdo que seria pego com innerHTML</p>)
 
 */ 
 /*
@@ -40,6 +41,7 @@ TERMOS/CONTEÚDO
         ação.
     .FOR -> Realiza determinada ação ATÉ que a condição seja satisfeita. Ex.: conte de 1 até 5
     o programa só irá parar ao chegar ao número 5, condição final.
+    .forEach -> realiza uma ação para cada item dentro de uma ARRAY
         .Estrutura -> for(var valorInicial; valorInicial<valorFinal; valorInicial++)
     .Funcão anônima -> ao invés de nomear uma função a parte e executá-la, há a 
     possibilidade declará-la durante o uso. Feita da seguinte forma => function(argumentos){ação}; 
