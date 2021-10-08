@@ -2,17 +2,9 @@
 var botaoAdicionarCliente  = document.querySelector("#adicionar-paciente");
 
 botaoAdicionarCliente.addEventListener("click",function(event){
-
-    event.preventDefault();
-
-    var form = document.querySelector("#form-adiciona");
-    
-    var paciente = obtemPacienteForm(form);
-
     var erros = validaPaciente(paciente);
 
     if (erros.length > 0) {
-        exibeMensagensErro(erros);
         console.log(erros)
         return;
     }
@@ -29,12 +21,13 @@ botaoAdicionarCliente.addEventListener("click",function(event){
 })
 
 function obtemPacienteForm(form){
+
     var paciente = {
-        nome : form.nome.value,
-        peso : form.peso.value,
-        altura : form.altura.value,
-        gordura  : form.gordura.value,
-        imc: calculaImc(form.peso.value, form.altura.value)
+       nome: form.nome.value,
+       peso: form.peso.value,
+       altura: form.altura.value,
+       gordura: form.gordura.value,
+       imc: calculaImc(form.peso.value, form.altura.value)
     }
     return paciente
 }
