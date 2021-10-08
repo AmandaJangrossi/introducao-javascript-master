@@ -23,7 +23,11 @@ COMANDOS
     .var.appendChild() -> adiciona um "filho" ao elemento pai
     .document.createElement("tag") -> cria um elemento dentro do documento. Pode ter uma variável atribuída
     a ele.
-
+    .this.remove() -> remove o elemento associado a função (ou a algum outro, substituindo this pelo nome "ul")
+    .event.target -> quem sofre a ação do evento
+    .parentNode -> "pai" do elemento (exemplo, em uma "li" o "pai" seria o "ul")
+    .setTimeOut(funcao, tempo) -> informa para o JS quanto tempo ele tem que "esperar" ate executar a funcao
+     
 */ 
 /*
 TERMOS/CONTEÚDO
@@ -42,7 +46,10 @@ TERMOS/CONTEÚDO
         .Estrutura -> for(var valorInicial; valorInicial<valorFinal; valorInicial++)
     .Funcão anônima -> ao invés de nomear uma função a parte e executá-la, há a 
     possibilidade declará-la durante o uso. Feita da seguinte forma => function(argumentos){ação}; 
-    */
+    .THIS -> executa uma ação para o "dono" do escopo da função.
+    .EventBubbling -> quando executamos um evento no JS, ele engloba também os elementos pai de onde
+    o 
+*/
 /*
 DICAS/BOAS PRÁTICAS
 
