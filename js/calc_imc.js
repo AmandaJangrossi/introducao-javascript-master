@@ -28,7 +28,7 @@ COMANDOS
     .event.target -> quem sofre a ação do evento
     .parentNode -> "pai" do elemento (exemplo, em uma "li" o "pai" seria o "ul")
     .setTimeOut(funcao, tempo) -> informa para o JS quanto tempo ele tem que "esperar" ate executar a funcao
-     
+     .JSON.parse(resposta_json) -> pega o JSON obtido (string) e transforma em um array de objetos JS
 */ 
 /*
 TERMOS/CONTEÚDO
@@ -51,6 +51,7 @@ TERMOS/CONTEÚDO
     .THIS -> executa uma ação para o "dono" do escopo da função.
     .EventBubbling -> quando executamos um evento no JS, ele engloba também os elementos pai de onde
     o 
+    .RegExp(conteudo_buscado, "método_filtro").test -> Faz buscas no documento
 */
 /*
 DICAS/BOAS PRÁTICAS

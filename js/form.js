@@ -9,16 +9,18 @@ botaoAdicionarCliente.addEventListener("click",function(event){
         return;
     }
 
-    var pacienteTr = criaTr(paciente);
-    console.log(pacienteTr)
-
-    var tabela = document.querySelector("#tabela-pacientes");
-    console.log(tabela)
-
-    tabela.appendChild(pacienteTr);
-
+    adicionaPacienteTabela(paciente)
     form.reset()
 })
+
+function adicionaPacienteTabela(paciente){
+
+    var pacienteTr = criaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+
+}
+
 
 function obtemPacienteForm(form){
 

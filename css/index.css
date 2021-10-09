@@ -148,7 +148,11 @@ button[disabled=disabled], button:disabled {
 }
 
 #filtrar-tabela{
-	height: 3%;
+	height: 5%;
 	width:20%;
-	margin-bottom: 2%;
+	margin-bottom:2%;
+}
+
+.esconde-busca{
+	display:none;
 }

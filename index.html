@@ -24,6 +24,7 @@
 				<h2>Meus pacientes</h2>
 				<label for="filtrar-tabela">Procurar:</label>
 				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+				<span id="erro-ajax" class="esconde-busca">Erro ao buscar os pacientes!</span>
 				<table>
 					<thead>
 						<tr>
@@ -75,6 +76,7 @@
 						</tr>
 					</tbody>
 				</table>
+				<button id="buscar-pacientes" class="botao btn-primary">Buscar Paciente</button>
 
 			</section>
 			
@@ -101,13 +103,15 @@
 					<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
 				</div>
 
-				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+				<button id="adicionar-paciente" class="botao btn-primary">Adicionar</button>
 			</form>
 		</section>
 
 		<script src="/js/calc_imc.js"></script>
 		<script src="/js/form.js"></script>
 		<script src="/js/remove_paciente.js"></script>
+		<script src="/js/filtra.js"></script>
+		<script src="/js/buscar_pacientes.js"></script>
 
 	</body>
 </html>
