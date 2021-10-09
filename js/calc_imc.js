@@ -23,6 +23,7 @@ COMANDOS
     .var.appendChild() -> adiciona um "filho" ao elemento pai
     .document.createElement("tag") -> cria um elemento dentro do documento. Pode ter uma variável atribuída
     a ele.
+    .innerHTML -> pega o HTML "interior", o conteúdo entre duas tags
     .this.remove() -> remove o elemento associado a função (ou a algum outro, substituindo this pelo nome "ul")
     .event.target -> quem sofre a ação do evento
     .parentNode -> "pai" do elemento (exemplo, em uma "li" o "pai" seria o "ul")
